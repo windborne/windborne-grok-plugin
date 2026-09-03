@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "windborne-weather": {
+      "type": "http",
+      "url": "https://weatheragent-mcp.windbornesystems.com/mcp",
+      "oauth": {
+        "clientId": "iUPEBZdbT2b7gP41quz9_EV5Z24mQ6aBbBGisZ-jZJM",
+        "scopes": ["weather:apps"]
+      }
+    }
+  }
+}
