@@ -55,7 +55,7 @@ Show me precipitation and pressure over the North Atlantic.
 
 The plugin talks to exactly two WindBorne endpoints:
 
-- `https://weatheragent-mcp.windbornesystems.com/mcp`, the MCP server.
+- `https://weather-mcp.windbornesystems.com/mcp`, the MCP server.
 - `https://app.windbornesystems.com`, the OAuth 2.1 authorization server
   the MCP server points to.
 

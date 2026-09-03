@@ -38,6 +38,6 @@ render them.
 
 ## Authentication
 
-The server is configured at `https://weatheragent-mcp.windbornesystems.com/mcp`.
+The server is configured at `https://weather-mcp.windbornesystems.com/mcp`.
 If authentication is required, ask the user to complete the client's OAuth
 flow in the browser. Never ask the user to paste a key or token into chat.
