@@ -1,0 +1,19 @@
+{
+  "name": "windborne",
+  "displayName": "Weather by WindBorne",
+  "version": "1.0.0",
+  "description": "Weather by WindBorne. The world's best weather forecasts, powered by WindBorne's constellation of autonomous in-situ weather balloons and its WeatherMesh AI forecast models.",
+  "author": {
+    "name": "WindBorne Systems"
+  },
+  "homepage": "https://windbornesystems.com",
+  "repository": "https://github.com/windborne/windborne-grok-plugin",
+  "license": "MIT",
+  "keywords": [
+    "windborne",
+    "weather by windborne",
+    "weathermesh"
+  ],
+  "logo": "assets/logo.png",
+  "mcpServers": "mcp.json"
+}

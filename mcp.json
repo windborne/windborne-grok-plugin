@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "windborne-weather": {
+      "url": "https://weather-mcp.windbornesystems.com/mcp",
+      "auth": {
+        "CLIENT_ID": "CURSOR_CLIENT_ID_PENDING_ENGINE_DEPLOY",
+        "scopes": ["weather:apps"]
+      }
+    }
+  }
+}
