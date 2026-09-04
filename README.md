@@ -27,8 +27,8 @@ again.
 
 ### Cursor
 
-Open **Weather by WindBorne** in the Cursor Marketplace and choose
-**Add to Cursor**.
+Install **Weather by WindBorne** from the Cursor Marketplace, either from
+its listing on cursor.com or from **Customize → Plugins** inside Cursor.
 
 The first time a tool runs, Cursor opens WindBorne's authorization page in
 your browser. Approve the connection and the tool call completes.
@@ -82,13 +82,8 @@ PKCE. Each host reads its own server configuration: Grok Build reads
 `.mcp.json` (`oauth.clientId`) and Cursor reads `mcp.json`
 (`auth.CLIENT_ID`). Both values are public client identifiers, not
 secrets; no API key or secret is needed or stored in this repository.
-
-Authorization completes at the client's own fixed callback: for Grok
-Build, a loopback port on your machine; for Cursor desktop,
-`localhost:8787`; for Cursor web and Grok Bot, `cursor.com`. Tokens are
-held by the client: Grok Build and Cursor desktop keep them in their own
-credential store on your machine, and Cursor web and Grok Bot keep them on
-Cursor's side.
+Tokens are held by the client: on your machine for Grok Build and Cursor
+desktop, on Cursor's side for Cursor web and Grok Bot.
 
 The plugin has no hooks, commands, local processes, or telemetry; the MCP
 connection above is all it does.
