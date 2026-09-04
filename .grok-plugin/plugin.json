@@ -1,7 +1,7 @@
 {
   "name": "windborne",
   "version": "1.0.0",
-  "description": "Weather by WindBorne for Grok Build. The world's best weather forecasts, powered by WindBorne's constellation of autonomous in-situ weather balloons and its WeatherMesh AI forecast models.",
+  "description": "World's most accurate forecasts & insights, powered by WeatherMesh AI & Atlas balloons.",
   "author": {
     "name": "WindBorne Systems",
     "url": "https://github.com/windborne"
