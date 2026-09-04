@@ -1,18 +1,21 @@
-# Weather by WindBorne for Grok Build
+# Weather by WindBorne for Grok Build, Cursor, and Grok Bot
 
-Ask Grok Build about the weather and get WindBorne's forecast back as
-interactive weather apps: cards the MCP server returns alongside each
-answer, rendered by the client and containing only forecast data.
+Ask Grok Build, Cursor, or Grok Bot about the weather and get WindBorne's
+forecast back as interactive weather apps: cards the MCP server returns
+alongside each answer, rendered by the client and containing only forecast
+data.
 
 [WindBorne Systems](https://windbornesystems.com) designs, builds, and
 operates Atlas, a global constellation of long-duration autonomous weather
 balloons that collect in-situ observations from the parts of the atmosphere
 no other network reaches, and trains WeatherMesh, its AI forecast models,
-on them. This plugin connects Grok Build to WindBorne's hosted MCP server,
-which serves that forecast for any location or region, and ships one skill
-that teaches the agent when and how to use it.
+on them. This plugin connects each of those hosts to WindBorne's hosted MCP
+server, which serves that forecast for any location or region, and ships
+one skill that teaches the agent when and how to use it.
 
 ## Installation
+
+### Grok Build
 
 In Grok Build, open `/plugin`, search for **WindBorne**, and install the
 plugin.
@@ -21,6 +24,21 @@ The first time a tool runs, Grok Build opens WindBorne's authorization page
 in your browser. Approve the connection and the tool call completes. Grok
 Build stores the resulting token locally and refreshes it without asking
 again.
+
+### Cursor
+
+Open **Weather by WindBorne** in the Cursor Marketplace and choose
+**Add to Cursor**.
+
+The first time a tool runs, Cursor opens WindBorne's authorization page in
+your browser. Approve the connection and the tool call completes.
+
+### Grok Bot
+
+Grok Bot has no plugin catalog of its own; it installs plugins from the
+Cursor Marketplace. A Teams admin allows the plugin under
+**Teams Marketplace → Integrations**, after which it is available to the
+team. The same authorization page appears the first time a tool runs.
 
 ## What you can ask
 
@@ -60,9 +78,17 @@ The plugin talks to exactly two WindBorne endpoints:
   the MCP server points to.
 
 Authorization uses the standard MCP OAuth flow with a public client and
-PKCE. The `clientId` in `.mcp.json` is a public identifier, not a secret;
-no API key or secret is needed or stored in this repository. Tokens are
-held by Grok Build in its own credential store on your machine.
+PKCE. Each host reads its own server configuration: Grok Build reads
+`.mcp.json` (`oauth.clientId`) and Cursor reads `mcp.json`
+(`auth.CLIENT_ID`). Both values are public client identifiers, not
+secrets; no API key or secret is needed or stored in this repository.
+
+Authorization completes at the client's own fixed callback: for Grok
+Build, a loopback port on your machine; for Cursor desktop,
+`localhost:8787`; for Cursor web and Grok Bot, `cursor.com`. Tokens are
+held by the client: Grok Build and Cursor desktop keep them in their own
+credential store on your machine, and Cursor web and Grok Bot keep them on
+Cursor's side.
 
 The plugin has no hooks, commands, local processes, or telemetry; the MCP
 connection above is all it does.
